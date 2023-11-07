@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey"
+        android:scrollbars="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".presentation.activity.HomeDetailInfoActivity">
+
+                <LinearLayout
+                    android:id="@+id/line_fuel_and_temperature"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="#212946"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_fuel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fuel Tank"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/gauge"
+                    app:layout_constraintEnd_toEndOf="@id/gauge"/>
+
+                        <TextView
+                            android:id="@+id/tv_temperature"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/temperature_c"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="@color/white"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/multigauge"
+                            app:layout_constraintEnd_toEndOf="@id/multigauge"/>
+
+                <com.ekn.gruzer.gaugelibrary.HalfGauge
+                    android:id="@+id/gauge"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_fuel"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/multigauge"/>
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/multigauge"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:progress="60"
+                    app:indicatorSize="100dp"
+                    app:trackColor="@color/alpha_10_light_blue"
+                    app:trackCornerRadius="16dp"
+                    app:trackThickness="8dp"
+
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_fuel"
+                    app:layout_constraintStart_toEndOf="@id/gauge"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                        <ImageView
+                            android:id="@+id/tv_title_pc"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/icon_celcius"
+                            app:layout_constraintBottom_toTopOf="@id/tv_value_multigauge"
+                            app:layout_constraintEnd_toEndOf="@id/multigauge"
+                            app:layout_constraintStart_toStartOf="@id/multigauge"
+                            app:layout_constraintTop_toTopOf="@id/multigauge"
+                            app:layout_constraintVertical_chainStyle="packed" />
+
+
+                        <TextView
+                            android:id="@+id/tv_value_multigauge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:includeFontPadding="false"
+                            android:text="60 \u2103"
+                            android:textAppearance="@style/text_progress_bar"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@id/multigauge"
+                            app:layout_constraintEnd_toEndOf="@id/multigauge"
+                            app:layout_constraintStart_toStartOf="@id/multigauge"
+                            app:layout_constraintTop_toBottomOf="@id/tv_title_pc" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/line_total_consumtion_fuel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#212946"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintTop_toBottomOf="@id/line_fuel_and_temperature"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Fuel Consumtion"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/white"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+                            android:id="@+id/tv_sum_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Form.Label"
+                            android:text="Amount of data in Liters (L)"
+                            android:layout_marginStart="16dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+<!--                        <LinearLayout-->
+<!--                            android:id="@+id/line_collecting_data"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="vertical"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:padding="16dp"-->
+<!--                            app:layout_constraintTop_toBottomOf="@id/tv_sum_amount">-->
+
+<!--                            <LinearLayout-->
+<!--                                android:id="@+id/line_hour"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:orientation="horizontal">-->
+<!--                                <TextView-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:textColor="#15317E"-->
+<!--                                    android:fontFamily="@font/roboto_bold"-->
+<!--                                    android:text="Consumtion Fuel in Hours :"/>-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginStart="10dp"-->
+<!--                                    android:textColor="@color/white"-->
+<!--                                    android:text="10L"/>-->
+<!--                            </LinearLayout>-->
+<!--                            <LinearLayout-->
+<!--                                android:id="@+id/line_day"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:orientation="horizontal">-->
+<!--                                <TextView-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:textColor="#15317E"-->
+<!--                                    android:fontFamily="@font/roboto_bold"-->
+<!--                                    android:text="Consumtion Fuel in Days   :"/>-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginStart="10dp"-->
+<!--                                    android:textColor="@color/white"-->
+<!--                                    android:text="120L"/>-->
+<!--                            </LinearLayout>-->
+
+<!--                            <LinearLayout-->
+<!--                                android:id="@+id/line_week"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:orientation="horizontal">-->
+<!--                                <TextView-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:textColor="#15317E"-->
+<!--                                    android:fontFamily="@font/roboto_bold"-->
+<!--                                    android:text="Consumtion Fuel in Weeks :"/>-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginStart="10dp"-->
+<!--                                    android:textColor="@color/white"-->
+<!--                                    android:text="840L"/>-->
+<!--                            </LinearLayout>-->
+
+<!--                            <LinearLayout-->
+<!--                                android:id="@+id/line_month"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:orientation="horizontal">-->
+<!--                                <TextView-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:fontFamily="@font/roboto_bold"-->
+<!--                                    android:textColor="#15317E"-->
+<!--                                    android:text="Consumtion Fuel in Month :"/>-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginStart="10dp"-->
+<!--                                    android:textColor="@color/white"-->
+<!--                                    android:text="7.300L"/>-->
+<!--                            </LinearLayout>-->
+
+
+<!--                        </LinearLayout>-->
+
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/piechart"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="20dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_sum_amount"/>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/line_data_temperature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#212946"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line_total_consumtion_fuel">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_data_temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Data Temperature"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/roboto_bold"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_temperature_real"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="60 \u2103"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textSize="24sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintEnd_toEndOf="@id/tv_data_temperature"
+                    app:layout_constraintStart_toStartOf="@id/tv_data_temperature"
+                    app:layout_constraintTop_toBottomOf="@id/tv_data_temperature"/>
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chart_number_of_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_temperature_real"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

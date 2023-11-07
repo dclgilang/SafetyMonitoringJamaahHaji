@@ -1,0 +1,16 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background layer -->
+    <item android:id="@android:id/background">
+        <shape>
+            <solid android:color="@color/fuelProgressBarBackground" />
+        </shape>
+    </item>
+    <!-- Progress layer -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <solid android:color="@color/fuelProgressBar" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.fragment.UserInfoFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/bg_user_information"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_image"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginStart="26dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="135dp"
+            android:layout_height="135dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_profile"/>
+
+    </androidx.cardview.widget.CardView>
+    
+    <androidx.cardview.widget.CardView
+        android:id="@+id/barcode"
+        android:layout_width="119dp"
+        android:layout_height="119dp"
+        android:layout_marginEnd="32dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintTop_toTopOf="@id/card_image"
+        app:layout_constraintBottom_toBottomOf="@id/card_image"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="119dp"
+            android:layout_height="119dp"
+            android:src="@drawable/ic_barcode"
+            android:layout_marginEnd="32dp"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_line_identify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_image">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textColor="#373737"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_nationality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nationality"
+                android:textColor="#373737"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="66dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ahnaf Ramadhan"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                app:layout_constraintTop_toBottomOf="@id/tv_name"
+                app:layout_constraintStart_toStartOf="@id/tv_name"/>
+
+            <TextView
+                android:id="@+id/nationality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Indonesia"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                app:layout_constraintTop_toBottomOf="@id/tv_nationality"
+                app:layout_constraintStart_toStartOf="@id/tv_nationality"/>
+
+            <TextView
+                android:id="@+id/tv_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:textColor="#373737"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintTop_toBottomOf="@id/name"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Age"
+                android:textColor="#373737"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="66dp"
+                app:layout_constraintTop_toBottomOf="@id/name"
+                app:layout_constraintStart_toStartOf="@id/nationality"/>
+
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                app:layout_constraintTop_toBottomOf="@id/tv_gender"
+                app:layout_constraintStart_toStartOf="@id/tv_gender"/>
+
+
+            <TextView
+                android:id="@+id/age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="54 Years"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                app:layout_constraintTop_toBottomOf="@id/tv_age"
+                app:layout_constraintStart_toStartOf="@id/tv_age"/>
+
+            <TextView
+                android:id="@+id/tv_no_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No password"
+                android:textColor="#373737"
+                android:layout_marginStart="20dp"
+                app:layout_constraintTop_toBottomOf="@id/gender"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/noPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0xxxxxxxxxx"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginBottom="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_no_password"
+                app:layout_constraintStart_toStartOf="@id/tv_no_password"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_tour_leader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_line_identify">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_tour_leader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tour Leader"
+                android:textColor="#373737"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_muhtawif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Muthawif"
+                android:textColor="#373737"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="66dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/tourleader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ahnaf Ramadhan"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                app:layout_constraintTop_toBottomOf="@id/tv_tour_leader"
+                app:layout_constraintStart_toStartOf="@id/tv_tour_leader"/>
+
+            <TextView
+                android:id="@+id/muhtaqid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Indonesia"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginBottom="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_muhtawif"
+                app:layout_constraintStart_toStartOf="@id/tv_muhtawif"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_line_hotel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_tour_leader">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_hotel_mekkah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hotel Mekkah"
+                android:textColor="#373737"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_hotel_madinah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hotel Madinah"
+                android:textColor="#373737"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="66dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/hotelMekah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Royal dar Eiman"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                app:layout_constraintTop_toBottomOf="@id/tv_hotel_mekkah"
+                app:layout_constraintStart_toStartOf="@id/tv_hotel_mekkah"/>
+
+            <TextView
+                android:id="@+id/hotelMadinah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Al eiman royal hotel"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginBottom="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_hotel_madinah"
+                app:layout_constraintStart_toStartOf="@id/tv_hotel_madinah"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_jemaah_haji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jemaah_haji_indonesia"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_line_hotel"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tahun 1444H/2023"
+        android:fontFamily="@font/inter_semibold"
+        app:layout_constraintTop_toBottomOf="@id/tv_jemaah_haji"
+        app:layout_constraintStart_toStartOf="@id/tv_jemaah_haji"
+        app:layout_constraintEnd_toEndOf="@id/tv_jemaah_haji"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

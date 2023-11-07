@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_bottom_sheet"
+            android:elevation="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Silahkan tentukan pilihan anda :"
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="#404040"
+                android:includeFontPadding="false"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="26dp"
+                android:layout_marginBottom="20dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/item_divider" />
+
+            <com.paulrybitskyi.valuepicker.ValuePickerView
+                android:id="@+id/picker_view"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                style="@style/TeamPicker"/>
+
+            <ListView
+                android:id="@+id/list_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/item_divider"/>
+
+            <Button
+                android:visibility="gone"
+                android:id="@+id/btn_choose"
+                style="@style/NormalButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#6045E2"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Simpan Pilihan"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</layout>

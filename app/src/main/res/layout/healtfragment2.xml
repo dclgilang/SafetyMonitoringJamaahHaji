@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tv_healt_information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Health Information"
+        android:textSize="16sp"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="#373737"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/line_heart_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_healt_information">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/tv_healt_information">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/line_heartrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/heartrate"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:progress="60"
+        app:indicatorSize="100dp"
+        app:trackColor="@color/alpha_10_pink"
+        app:trackCornerRadius="16dp"
+        app:indicatorColor="#FE6289"
+        app:trackThickness="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:id="@+id/icheartrate"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/ic_heartrate"
+        app:layout_constraintBottom_toTopOf="@id/tvheartrate"
+        app:layout_constraintEnd_toEndOf="@id/heartrate"
+        app:layout_constraintStart_toStartOf="@id/heartrate"
+        app:layout_constraintTop_toTopOf="@id/heartrate"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/heart_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="53 BPM"
+        android:textColor="#FE6289"
+        android:fontFamily="@font/roboto_bold"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="@id/heartrate"
+        app:layout_constraintBottom_toBottomOf="@id/heartrate"
+        app:layout_constraintStart_toStartOf="@id/heartrate"
+        app:layout_constraintEnd_toEndOf="@id/heartrate"/>
+
+    <TextView
+        android:id="@+id/tvheartrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:includeFontPadding="false"
+        android:text="Normal"
+        android:textSize="10sp"
+        android:textAppearance="@style/text_progress_bar"
+        android:textColor="#FE6289"
+        app:layout_constraintEnd_toEndOf="@id/heartrate"
+        app:layout_constraintStart_toStartOf="@id/heartrate"
+        app:layout_constraintTop_toBottomOf="@id/heart_value" />
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Heart Rate"
+             android:layout_marginBottom="13dp"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/heartrate"
+             app:layout_constraintStart_toStartOf="@id/heartrate"
+             app:layout_constraintEnd_toEndOf="@id/heartrate"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/line_sleep_quality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/sleepquality"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:progress="60"
+                app:indicatorSize="100dp"
+                app:trackColor="@color/alpha_10_light_blue"
+                app:trackCornerRadius="16dp"
+                app:indicatorColor="#2CB4F2"
+                app:trackThickness="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <ImageView
+                android:id="@+id/icsleep"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/icsleeprate"
+                app:layout_constraintBottom_toTopOf="@id/tvsleeprate"
+                app:layout_constraintEnd_toEndOf="@id/sleepquality"
+                app:layout_constraintStart_toStartOf="@id/sleepquality"
+                app:layout_constraintTop_toTopOf="@id/sleepquality"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/sleep_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7 Hours"
+                android:textColor="#2CB4F2"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="12sp"
+                app:layout_constraintTop_toTopOf="@id/sleepquality"
+                app:layout_constraintBottom_toBottomOf="@id/sleepquality"
+                app:layout_constraintStart_toStartOf="@id/sleepquality"
+                app:layout_constraintEnd_toEndOf="@id/sleepquality"/>
+
+            <TextView
+                android:id="@+id/tvsleeprate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:includeFontPadding="false"
+                android:text="Good"
+                android:textSize="10sp"
+                android:textAppearance="@style/text_progress_bar"
+                android:textColor="#2CB4F2"
+                app:layout_constraintEnd_toEndOf="@id/sleepquality"
+                app:layout_constraintStart_toStartOf="@id/sleepquality"
+                app:layout_constraintTop_toBottomOf="@id/sleep_value" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sleep Quality"
+                android:layout_marginBottom="13dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sleepquality"
+                app:layout_constraintStart_toStartOf="@id/sleepquality"
+                app:layout_constraintEnd_toEndOf="@id/sleepquality"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/line_breathing_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/breathingrate"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:progress="60"
+                app:indicatorSize="100dp"
+                app:trackColor="@color/alpha_10_light_green"
+                app:trackCornerRadius="16dp"
+                app:indicatorColor="#66D68C"
+                app:trackThickness="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <ImageView
+                android:id="@+id/icbreathing"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_breathing_rate"
+                app:layout_constraintBottom_toTopOf="@id/tvbreathing"
+                app:layout_constraintEnd_toEndOf="@id/breathingrate"
+                app:layout_constraintStart_toStartOf="@id/breathingrate"
+                app:layout_constraintTop_toTopOf="@id/breathingrate"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/breathing_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="90"
+                android:textColor="#2CB4F2"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="12sp"
+                app:layout_constraintTop_toTopOf="@id/breathingrate"
+                app:layout_constraintBottom_toBottomOf="@id/breathingrate"
+                app:layout_constraintStart_toStartOf="@id/breathingrate"
+                app:layout_constraintEnd_toEndOf="@id/breathingrate"/>
+
+            <TextView
+                android:id="@+id/tvbreathing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:includeFontPadding="false"
+                android:text="Good"
+                android:textSize="10sp"
+                android:textAppearance="@style/text_progress_bar"
+                android:textColor="#2CB4F2"
+                app:layout_constraintEnd_toEndOf="@id/breathingrate"
+                app:layout_constraintStart_toStartOf="@id/breathingrate"
+                app:layout_constraintTop_toBottomOf="@id/breathing_value" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Heart Rate"
+                android:layout_marginBottom="13dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/breathingrate"
+                app:layout_constraintStart_toStartOf="@id/breathingrate"
+                app:layout_constraintEnd_toEndOf="@id/breathingrate"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/line_movement_pattern"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/line_heart_information">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ic_movement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_movement_pattern"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textSize="10sp"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="#FE6289"
+                android:layout_marginStart="53dp"
+                android:layout_marginTop="19dp"
+                app:layout_constraintTop_toBottomOf="@id/ic_movement"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_steps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Steps"
+                android:textSize="10sp"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="#FE6289"
+                android:layout_marginTop="19dp"
+                app:layout_constraintTop_toBottomOf="@id/ic_movement"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Distance"
+                android:textSize="10sp"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="#FE6289"
+                android:layout_marginEnd="53dp"
+                android:layout_marginTop="19dp"
+                app:layout_constraintTop_toBottomOf="@id/ic_movement"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="07/11/2023"
+                android:textSize="12sp"
+                android:textColor="#FE6289"
+                android:fontFamily="@font/roboto_bold"
+                android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_date"
+                app:layout_constraintStart_toStartOf="@id/tv_date"
+                app:layout_constraintEnd_toEndOf="@id/tv_date"/>
+
+            <TextView
+                android:id="@+id/value_steps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="07/11/2023"
+                android:textSize="12sp"
+                android:textColor="#FE6289"
+                android:fontFamily="@font/roboto_bold"
+                android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_steps"
+                app:layout_constraintStart_toStartOf="@id/tv_steps"
+                app:layout_constraintEnd_toEndOf="@id/tv_steps"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="07/11/2023"
+                android:textSize="12sp"
+                android:textColor="#FE6289"
+                android:fontFamily="@font/roboto_bold"
+                android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_distance"
+                app:layout_constraintStart_toStartOf="@id/tv_distance"
+                app:layout_constraintEnd_toEndOf="@id/tv_distance"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Movement Pattern"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="27dp"
+                android:layout_marginBottom="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/value_steps"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/line_movement_pattern">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/oxygen"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:progress="60"
+                    app:indicatorSize="100dp"
+                    app:trackColor="@color/alpha_10_light_blue"
+                    app:trackCornerRadius="16dp"
+                    app:indicatorColor="#2CB4F2"
+                    app:trackThickness="8dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/icoxygen"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/ic_oxygen"
+                    app:layout_constraintBottom_toTopOf="@id/tvoxygen"
+                    app:layout_constraintEnd_toEndOf="@id/oxygen"
+                    app:layout_constraintStart_toStartOf="@id/oxygen"
+                    app:layout_constraintTop_toTopOf="@id/oxygen"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/oxygen_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="94"
+                    android:textColor="#2CB4F2"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textSize="12sp"
+                    app:layout_constraintTop_toTopOf="@id/oxygen"
+                    app:layout_constraintBottom_toBottomOf="@id/oxygen"
+                    app:layout_constraintStart_toStartOf="@id/oxygen"
+                    app:layout_constraintEnd_toEndOf="@id/oxygen"/>
+
+                <TextView
+                    android:id="@+id/tvoxygen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:includeFontPadding="false"
+                    android:text="Normal"
+                    android:textSize="10sp"
+                    android:textAppearance="@style/text_progress_bar"
+                    android:textColor="#2CB4F2"
+                    app:layout_constraintEnd_toEndOf="@id/oxygen"
+                    app:layout_constraintStart_toStartOf="@id/oxygen"
+                    app:layout_constraintTop_toBottomOf="@id/oxygen_value" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blood Oxygen"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:layout_marginBottom="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/oxygen"
+                    app:layout_constraintStart_toStartOf="@id/oxygen"
+                    app:layout_constraintEnd_toEndOf="@id/oxygen"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/emotion"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:progress="60"
+                    app:indicatorSize="100dp"
+                    app:trackColor="@color/alpha_10_dark_pink"
+                    app:trackCornerRadius="16dp"
+                    app:indicatorColor="#FE6289"
+                    app:trackThickness="8dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/icemotion"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/ic_emotionsss"
+                    app:layout_constraintBottom_toTopOf="@id/tvemotion"
+                    app:layout_constraintEnd_toEndOf="@id/emotion"
+                    app:layout_constraintStart_toStartOf="@id/emotion"
+                    app:layout_constraintTop_toTopOf="@id/emotion"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/emotion_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="94"
+                    android:textColor="#FE6289"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textSize="12sp"
+                    app:layout_constraintTop_toTopOf="@id/emotion"
+                    app:layout_constraintBottom_toBottomOf="@id/emotion"
+                    app:layout_constraintStart_toStartOf="@id/emotion"
+                    app:layout_constraintEnd_toEndOf="@id/emotion"/>
+
+                <TextView
+                    android:id="@+id/tvemotion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:includeFontPadding="false"
+                    android:text="Normal"
+                    android:textSize="10sp"
+                    android:textAppearance="@style/text_progress_bar"
+                    android:textColor="#FE6289"
+                    app:layout_constraintEnd_toEndOf="@id/emotion"
+                    app:layout_constraintStart_toStartOf="@id/emotion"
+                    app:layout_constraintTop_toBottomOf="@id/emotion_value" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blood Oxygen"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:layout_marginBottom="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/emotion"
+                    app:layout_constraintStart_toStartOf="@id/emotion"
+                    app:layout_constraintEnd_toEndOf="@id/emotion"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
